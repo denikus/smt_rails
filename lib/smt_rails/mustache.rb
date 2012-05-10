@@ -8,7 +8,7 @@ module SmtRails
       if template.locals.include?(SmtRails.action_view_key.to_s) || template.locals.include?(SmtRails.action_view_key.to_sym)
         "Mustache.render(Haml::Engine.new(#{template.source.inspect}).render, #{SmtRails.action_view_key.to_s}).html_safe"
       else
-        "#{template.source.inspect}.html_safe"
+        "Haml::Engine.new(#{template.source.inspect}).render().html_safe"
       end
     end
   end
