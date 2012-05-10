@@ -6,7 +6,7 @@ module SmtRails
     
     initializer "sprockets.smt_rails", :after => "sprockets.environment", :group => :all do |app|
       next unless app.assets
-      app.assets.register_engine(".#{SmtRails.template_extension}.haml", Tilt)
+      app.assets.register_engine(".#{SmtRails.template_extension}", Tilt)
       app.config.assets.paths << Rails.root.join("app", "assets", "templates")
     end
   end
