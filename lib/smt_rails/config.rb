@@ -25,7 +25,7 @@ module SmtRails
     end
     
     def template_namespace
-      @template_namespace ||= 'SMT'
+      @template_namespace ||= 'SMT1'
     end
   end
 end
