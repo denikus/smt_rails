@@ -10,7 +10,7 @@ module SmtRails
     require 'smt_rails/engine'
   else
     require 'sprockets'
-    Sprockets.register_engine ".#{SmtRails.template_extension}", Tilt
+    Sprockets.register_engine ".#{SmtRails.template_extension}.haml", Tilt
   end
 end
 
