@@ -1,14 +1,13 @@
 require "mustache"
-require "haml"
 require "active_support"
 
 module SmtRails
   module Mustache
     def self.call(template)
       if template.locals.include?(SmtRails.action_view_key.to_s) || template.locals.include?(SmtRails.action_view_key.to_sym)
-        "Mustache.render(Haml::Engine.new(#{template.source.inspect}).render, #{SmtRails.action_view_key.to_s}).html_safe"
+        "Mustache.render('test', #{SmtRails.action_view_key.to_s}).html_safe"
       else
-        "Haml::Engine.new(#{template.source.inspect}).render().html_safe"
+        "'test'.html_safe"
       end
     end
   end
