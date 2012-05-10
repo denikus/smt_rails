@@ -5,9 +5,9 @@ module SmtRails
   module Mustache
     def self.call(template)
       if template.locals.include?(SmtRails.action_view_key.to_s) || template.locals.include?(SmtRails.action_view_key.to_sym)
-        "Mustache.render('test', #{SmtRails.action_view_key.to_s}).html_safe"
+        "test"
       else
-        "'test'.html_safe"
+        "test"
       end
     end
   end
